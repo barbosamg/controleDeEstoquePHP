@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-include_once('head.php');
-?>
-<title>Gerenciamento de Produtos</title>
+<?php include_once('head.php'); ?>
+<title>Login</title>
+<style>
+.tamanho-largura {
+    max-width: 500px;
+    height: auto;
+    left: 50%;
+    margin: -200px 0 0 -210px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    border: 2px solid #f3f3f3;
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
+    -moz-box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
+    box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
+}
+</style>
 
 <body>
-    <div style="padding:20px 0" class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-plus-circle"></i> Adicionar Produto</h5>
-                        <p class="card-text">Cadastre novos produtos no estoque.</p>
-                        <a href="cadastrar_produto.php" class="btn btn-primary">Cadastrar produto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-newspaper"></i> Lista de Produtos</h5>
-                        <p class="card-text">Visualizar, editar ou excluir os produtos.</p>
-                        <a href="listar_produtos.php" class="btn btn-primary">Produtos</a>
-                    </div>
-                </div>
-            </div>
+    <div class="container tamanho-largura">
+        <div class="d-flex justify-content-center">
+            <img src="img/cadeado.png" width="125px" height="125px" alt="">
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-tags"></i> Adicionar Categoria</h5>
-                        <p class="card-text">Cadastre novas categorias para os produtos.</p>
-                        <a href="cadastrar_categoria.php" class="btn btn-primary">Cadastrar categoria</a>
-                    </div>
-                </div>
+        <form action="logar.php" method="POST">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" type="email" name="usuario" placeholder="Digite o e-mail do usuário"
+                    autocomplete="off" />
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-truck-moving"></i> Adicionar Fornecedor</h5>
-                        <p class="card-text">Cadastre novos fornecedores de seus produtos.</p>
-                        <a href="cadastrar_fornecedor.php" class="btn btn-primary">Cadastrar fornecedor</a>
-                    </div>
-                </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" />
             </div>
-        </div>
+            <button type="submit" class="btn btn-success btn-sm btn-block">Entrar</button>
+            <br>
+            <p class="d-flex justify-content-center">Não possui cadastro?<span style="width:5px"></span><a href="cadastrar_usuario_externo.php">Clique aqui</a></p>
+        </form>
     </div>
+
+
+    <?php include_once('footer.php'); ?>
 </body>
 
 </html>

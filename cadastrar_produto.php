@@ -5,11 +5,11 @@
 include_once('head.php');
 include_once('conexao.php');
 ?>
-
+<title>Cadastro de Produto</title>
 <body>
 <?php include_once('menu.php'); ?>
     <div style="padding:20px 0;max-width:800px" class="container">
-        <h4 style="padding:0 0 20px 0;margin-bottom:35px;" class="border-bottom">Formulário de Cadastro de Produto</h4>
+        <h4 style="padding:0 0 20px 0;margin-bottom:35px;" class="border-bottom">Cadastro de Produto</h4>
         <form action="inserir_produto.php" method="POST">
 
             <div class="form-group">
@@ -27,7 +27,7 @@ include_once('conexao.php');
             <div class="form-group">
                 <label for="quantidadeProduto">Quantidade</label>
                 <input type="number" class="form-control" id="quantidadeProduto" name="quantidadeProduto"
-                    placeholder="Digite o nome do produto" autocomplete="off">
+                    placeholder="Digite a quantidade do produto" autocomplete="off">
             </div>
 
             <div class="form-group">
@@ -47,7 +47,7 @@ include_once('conexao.php');
 
             <div class="form-group">
                 <label for="fornecedor">Fornecedor</label>
-                <select class="form-control" id="categoria" name="categoria">
+                <select class="form-control" id="categoria" name="fornecedor">
                 <?php
                 $sqlFornecedor = "SELECT * FROM fornecedor ORDER BY Nome ASC";
                 $retornoFornecedor = mysqli_query($conexao,$sqlFornecedor);
